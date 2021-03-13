@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Disciplinas",
+    "icon": "mdi-book",
+    "items": [
+      {
+        "id": "ead00031",
+        "link": "/course/comp/ead00031",
+        "title": "LIBRAS",
+        "icon": "mdi-hand",
+        "caption": "#ead00031"
+      },
+      {
+        "id": "ead01038",
+        "link": "/course/comp/ead01038",
+        "title": "Matemática Básica",
+        "icon": "mdi-calculator-variant",
+        "caption": "#ead01038"
+      },
+      {
+        "id": "ead05001",
+        "link": "/course/comp/ead05001",
+        "title": "Introdução à Informática",
+        "icon": "mdi-desktop-classic",
+        "caption": "#ead05001"
+      },
+      {
+        "id": "ead05002",
+        "link": "/course/comp/ead05002",
+        "title": "Construção de Páginas WEB",
+        "icon": "mdi-web",
+        "caption": "#ead05002"
+      },
+      {
+        "id": "ead05003",
+        "link": "/course/comp/ead05003",
+        "title": "Inglês Instrumental",
+        "icon": "mdi-book-alphabet",
+        "caption": "#ead05003"
+      },
+      {
+        "id": "ead05004",
+        "link": "/course/comp/ead05004",
+        "title": "Fundamentos de Algoritmos para Computação",
+        "icon": "mdi-video-input-component",
+        "caption": "#ead05004"
+      },
+      {
+        "id": "ead05005",
+        "link": "/course/comp/ead05005",
+        "title": "Projeto e Desenvolvimento de Algoritmos",
+        "icon": "mdi-gate-xor",
+        "caption": "#ead05005"
+      },
+      {
+        "id": "ead05006",
+        "link": "/course/comp/ead05006",
+        "title": "Álgebra Linear",
+        "icon": "mdi-vector-triangle",
+        "caption": "#ead05006"
+      },
+      {
+        "id": "ead05007",
+        "link": "/course/comp/ead05007",
+        "title": "Estrutura de Dados",
+        "icon": "mdi-view-list-outline",
+        "caption": "#ead05007"
+      },
+      {
+        "id": "ead05008",
+        "link": "/course/comp/ead05008",
+        "title": "Matemática para Computação",
+        "icon": "mdi-math-integral-box",
+        "caption": "#ead05008"
+      },
+      {
+        "id": "ead05010",
+        "link": "/course/comp/ead05010",
+        "title": "Organização de Computadores",
+        "icon": "mdi-chip",
+        "caption": "#ead05010"
+      },
+      {
+        "id": "ead05011",
+        "link": "/course/comp/ead05011",
+        "title": "Organização de Computadores",
+        "icon": "mdi-chip",
+        "caption": "#ead05011"
+      }
+    ]
+  }
+]
