@@ -1,6 +1,6 @@
 {
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/api/:match*", "destination": "https://saladeestudos.link/api/:match*" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
