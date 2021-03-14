@@ -10,26 +10,29 @@
           span.text-blue-8 {{ workload }} horas
         q-chip(square)
           q-avatar(color="grey" text-color="white" icon="mdi-pound").q-mx-md
-          span.text-blue-8 {{ code }}
+          span.text-blue-8 {{ course }}
         q-chip(square)
           q-avatar(color="grey" text-color="white" icon="mdi-check").q-mx-md
           span.text-blue-8 {{ type }}
         br
         q-btn.q-ma-xs.bg-white(
           push
-          @click="openUrl(gdriveUrl)"
+          v-if="drive_link"
+          @click="openUrl(drive_link)"
           icon="mdi-google-drive"
           label="Acesse o drive"
           )
         q-btn.q-ma-xs.bg-white(
           push
-          @click="openUrl(githubUrl)"
+          v-if="github_link"
+          @click="openUrl(github_link)"
           icon="mdi-github"
           label="Conteúdo no Github"
           )
         q-btn.q-ma-xs.bg-white(
           push
-          @click="openUrl(whatsappUrl)"
+          v-if="id"
+          @click="openWhatsapp(whatsapp_link)"
           icon="mdi-whatsapp"
           label="Grupo no Whatsapp"
           )
@@ -44,20 +47,26 @@
         narrow-indicator
       )
         q-tab( name="overview" label="Visão Geral")
-        q-tab( name="lessions" label="Vídeo Aulas")
+        q-tab( name="lessons" label="Vídeo Aulas")
 
       q-separator
 
       q-tab-panels( v-model="tab" animated)
         q-tab-panel( name="overview")
           q-markdown( :src="courseData")
+        q-tab-panel( name="lessons")
+          course-lesson( :lessons="lessons" :course="course")
 </template>
 
 <script>
-import { api, apiUrl } from 'boot/axios';
+import { apiUrl } from 'boot/axios';
+import CourseLesson from './CourseLesson';
 
 export default {
   name: 'CourseHandler',
+  components: {
+    CourseLesson,
+  },
   computed: {
     section() {
       return this.$route.params.section;
@@ -93,10 +102,25 @@ export default {
       this.openUrl(url);
     },
     fetchData() {
-      api.get(`/v1/subjects/${this.course}`).then((data) => {
-        // eslint-disable-next-line
-        console.log(data);
+      this.$api.get(`/v1/subject/${this.course}/code`).then(({ data }) => {
+        this.setPayloadData(data);
+        this.fetchLessons(data.id);
       });
+    },
+    fetchLessons(id) {
+      this.$api.get(`/v1/subject/${id}/lessons`).then(({ data }) => {
+        this.lessons = data;
+      });
+    },
+    setPayloadData(data) {
+      this.github_link = data.github_link;
+      this.drive_link = data.drive_link;
+      this.whatsapp_link = data.whatsapp_link;
+      this.workload = data.workload || '-';
+      this.amount_lessons = data.amount_lessons || '-';
+      this.name = data.name;
+      this.type = data.type || '-';
+      this.id = data.id;
     },
   },
   data() {
@@ -106,10 +130,12 @@ export default {
       drive_link: '',
       github_link: '',
       whatsapp_link: '',
-      workload: '80',
-      type: 'OBRIGATÓRIA',
-      name: 'Titulo',
-      code: 'ead020005',
+      workload: 0,
+      amount_lessons: 0,
+      type: '',
+      id: null,
+      name: '',
+      lessons: [],
     };
   },
 };
