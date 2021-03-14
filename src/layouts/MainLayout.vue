@@ -39,7 +39,9 @@
             EssentialLink.q-ml-md(
               v-for="link in item.items"
               :key="link.title"
-              v-bind="link"
+              :title="link.title"
+              :icon="link.icon"
+              :link="generateCourseLink(link.id)"
             )
 
     q-page-container
@@ -79,6 +81,9 @@ export default {
         // eslint-disable-next-line no-console
         this.courseLinks = data.default;
       });
+    },
+    generateCourseLink(id) {
+      return `/course/${this.section}/${id}`;
     },
   },
   data() {
