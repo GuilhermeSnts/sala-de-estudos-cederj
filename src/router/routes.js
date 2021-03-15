@@ -8,7 +8,6 @@ const routes = [
   },
   {
     path: '/course/:section',
-    name: 'course',
     props: true,
     component: () => import('layouts/MainLayout.vue'),
     children: [
@@ -20,6 +19,13 @@ const routes = [
         path: ':course?',
         component: () => import('pages/course/CourseHandler.vue'),
       },
+    ],
+  },
+  {
+    path: '/developer',
+    component: () => import('layouts/HomeLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Developer.vue') },
     ],
   },
   {

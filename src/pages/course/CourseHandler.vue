@@ -1,6 +1,5 @@
 <template lang="pug">
   q-page
-
     q-card.bg-grey-1
       q-card-section.bg-pattern-comp
         div(v-if="!fetchingData")
@@ -39,7 +38,7 @@
             )
         div(v-if="fetchingData")
           course-header-skeleton
-    q-card
+    q-card(square)
       q-tabs(
         v-model="tab"
         dense

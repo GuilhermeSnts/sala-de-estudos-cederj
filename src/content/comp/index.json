@@ -61,6 +61,11 @@
       },
       {
         "id": "ead05011",
+        "title": "Modelagem de Informação",
+        "icon": "mdi-view-module"
+      },
+      {
+        "id": "ead05012",
         "title": "Probabilidade e Estatística",
         "icon": "mdi-percent"
       },
@@ -70,9 +75,19 @@
         "icon": "mdi-database"
       },
       {
+        "id": "ead05015",
+        "title": "Física para Computação",
+        "icon": "mdi-atom-variant"
+      },
+      {
         "id": "ead05016",
         "title": "Sistemas Operacionais",
         "icon": "mdi-laptop"
+      },
+      {
+        "id": "ead05017",
+        "title": "Programação de Aplicações WEB",
+        "icon": "mdi-monitor-dashboard"
       },
       {
         "id": "ead05018",

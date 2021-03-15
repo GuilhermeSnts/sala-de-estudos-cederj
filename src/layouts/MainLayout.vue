@@ -19,7 +19,6 @@
       content-class="bg-grey-1"
     )
       q-toolbar( class="text-white bg-primary absolute-top" )
-        q-icon(name="mdi-magnify")
 
       q-scroll-area(
         style="height: calc(100% - 50px); margin-top: 50px; border-right: 1px solid #ddd"

@@ -1,20 +1,20 @@
 <template lang="pug">
   q-page( class="flex flex-center")
-    q-parallax(
+    q-parallax.bg-grey(
       contain
       src="https://images.unsplash.com/photo-1530984794059-26f732e6b7ab?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80"
     )
       h4.text-center.text-white Um ambiente feito por estudantes para estudantes.
       .row
-        q-btn(icon="mdi-github" push class="bg-white") Colabore com o projeto
+        q-btn(icon="mdi-github" push class="bg-white" to="/developer") Colabore com o projeto
 
     .bg-grey-4.q-pa-md.full-width
       h4.q-mb-sm Qual graduação está cursando?
-      p os cursos estão sendo inserido aos poucos.
+      p os cursos estão sendo inseridos aos poucos.
         span  Caso o seu ainda não esteja disponível,
         span  você pode nos ajudar a adicioná-lo mais rapidamente.
       .row
-        .q-pa-sm.col-sm-6.col-xs-12.col-md-4.col-lg-2(
+        .q-pa-sm.col-sm-6.col-xs-12.col-md-4.col-lg-3(
           v-for="(item, i) in items"
           :key="i"
         )
@@ -23,7 +23,6 @@
             :url="item.url"
             :icon="item.icon"
           )
-
     .bg-grey-2.q-pa-md.full-width
       q-markdown( :src="comoEstudar")
 </template>
