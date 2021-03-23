@@ -19,6 +19,18 @@
       content-class="bg-grey-1"
     )
       q-toolbar( class="text-white bg-primary absolute-top" )
+        q-input(
+          class="full-width"
+          borderless
+          dense
+          dark
+          placeholder="Pesquisar..."
+          v-model="search"
+        )
+          template( v-slot:before)
+            q-icon( name="mdi-magnify")
+          template( v-if="search" v-slot:append)
+            q-icon( name="cancel" @click.stop="search = ''" class="cursor-pointer")
 
       q-scroll-area(
         style="height: calc(100% - 50px); margin-top: 50px; border-right: 1px solid #ddd"
@@ -36,7 +48,7 @@
             default-opened
           )
             EssentialLink.q-ml-md(
-              v-for="link in item.items"
+              v-for="link in applySearch(item.items)"
               :key="link.title"
               :title="link.title"
               :icon="link.icon"
@@ -84,11 +96,26 @@ export default {
     generateCourseLink(id) {
       return `/course/${this.section}/${id}`;
     },
+    applySearch(items) {
+      if (this.search.length) {
+        return this.filterItems(this.search, items);
+      }
+      return items;
+    },
+    filterItems(string, options) {
+      const p = Array.from(string.toLowerCase()).reduce(
+        (a, v, i) => `${a}[^${string.substr(i)}]*?${v}`,
+        '',
+      );
+      const regex = RegExp(p);
+      return options.filter((v) => v.title.toLowerCase().match(regex));
+    },
   },
   data() {
     return {
       leftDrawerOpen: false,
       courseLinks: null,
+      search: '',
     };
   },
 };
@@ -96,5 +123,5 @@ export default {
 
 <style lang="sass" scoped>
 .menu-list .q-item
-  border-radius: 8px
+  border-radius: 8px 0px 0px 8px
 </style>
