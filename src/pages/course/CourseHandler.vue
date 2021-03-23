@@ -32,9 +32,9 @@
           q-btn.q-ma-xs.bg-white(
             push
             v-if="id"
-            @click="openWhatsapp(whatsapp_link)"
-            icon="mdi-whatsapp"
-            label="Grupo no Whatsapp"
+            @click="openTelegram(telegram_link)"
+            icon="mdi-telegram"
+            label="Grupo no Telegram"
             )
         div(v-if="fetchingData")
           course-header-skeleton
@@ -103,8 +103,8 @@ export default {
     openUrl(url) {
       window.open(url, '_blank');
     },
-    openWhatsapp() {
-      const url = `${apiUrl}/redirect/subject/${this.id}/whatsapp/`;
+    openTelegram() {
+      const url = `${apiUrl}/redirect/subject/${this.id}/telegram/`;
       this.openUrl(url);
     },
     clear() {
