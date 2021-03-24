@@ -31,17 +31,10 @@
             )
           q-btn.q-ma-xs.bg-white(
             push
-            v-if="telegram_link"
+            v-if="id"
             @click="openTelegram(telegram_link)"
             icon="mdi-telegram"
             label="Grupo no Telegram"
-            )
-          q-btn.q-ma-xs.bg-white(
-            push
-            v-if="whatsapp_link"
-            @click="openWhatsapp(whatsapp_link)"
-            icon="mdi-whatsapp"
-            label="Grupo no Whatsapp"
             )
         div(v-if="fetchingData")
           course-header-skeleton
@@ -114,10 +107,6 @@ export default {
       const url = `${apiUrl}/redirect/subject/${this.id}/telegram/`;
       this.openUrl(url);
     },
-    openWhatsapp() {
-      const url = `${apiUrl}/redirect/subject/${this.id}/whatsapp/`;
-      this.openUrl(url);
-    },
     clear() {
       this.id = null;
       this.lessons.length = 0;
@@ -146,8 +135,6 @@ export default {
     setPayloadData(data) {
       this.github_link = data.github_link;
       this.drive_link = data.drive_link;
-      this.whatsapp_link = data.whatsapp_link;
-      this.telegram_link = data.telegram_link;
       this.workload = data.workload || '-';
       this.amount_lessons = data.amount_lessons || '-';
       this.name = data.name;
@@ -163,8 +150,6 @@ export default {
       tab: 'overview',
       drive_link: '',
       github_link: '',
-      whatsapp_link: '',
-      telegram_link: '',
       workload: 0,
       amount_lessons: 0,
       type: '',
