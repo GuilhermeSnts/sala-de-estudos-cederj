@@ -34,7 +34,7 @@
             v-if="id"
             @click="openTelegram()"
             icon="mdi-telegram"
-            label="Grupo no Telegram"
+            label="Grupo de estudos"
             )
         div(v-if="fetchingData")
           course-header-skeleton
