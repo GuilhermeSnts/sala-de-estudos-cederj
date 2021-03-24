@@ -3,7 +3,11 @@
     q-card.bg-grey-1
       q-card-section.bg-pattern-comp
         div(v-if="!fetchingData")
-          h4.text-weight-bolder.q-mb-sm {{ name }}
+          .row
+            q-space
+            course-favorite-switch( :code="course")
+
+          h4.text-weight-bolder.q-my-sm {{ name }}
 
           q-chip(square)
             q-avatar(color="grey" text-color="white" icon="mdi-calendar").q-mx-md
@@ -63,6 +67,7 @@
 <script>
 import { apiUrl } from 'boot/axios';
 import CourseHeaderSkeleton from 'components/CourseHeaderSkeleton';
+import CourseFavoriteSwitch from 'components/CourseFavoriteSwitch';
 import CourseLesson from './CourseLesson';
 
 export default {
@@ -70,6 +75,7 @@ export default {
   components: {
     CourseLesson,
     CourseHeaderSkeleton,
+    CourseFavoriteSwitch,
   },
   computed: {
     section() {
@@ -147,6 +153,7 @@ export default {
     return {
       fetchingLessons: false,
       fetchingData: false,
+      favorited: false,
       courseData: '::: :::',
       tab: 'overview',
       drive_link: '',
