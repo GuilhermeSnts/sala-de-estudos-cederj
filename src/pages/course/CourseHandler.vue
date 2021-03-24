@@ -32,7 +32,7 @@
           q-btn.q-ma-xs.bg-white(
             push
             v-if="id"
-            @click="openTelegram(telegram_link)"
+            @click="openTelegram()"
             icon="mdi-telegram"
             label="Grupo no Telegram"
             )
