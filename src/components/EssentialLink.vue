@@ -1,6 +1,7 @@
 <template>
   <q-item
     clickable
+    exact
     tag="router-link"
     :to="link"
     :inset-level="insetLevel"

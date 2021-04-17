@@ -2,8 +2,9 @@
   q-layout( view="lHh Lpr lFf")
     q-header( elevated)
       q-toolbar( class="text-primary bg-grey-3")
-        q-avatar
-          img( src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg")
+        router-link( to="/")
+          q-avatar(square)
+            img( src="../assets/saladeestudos-logo.png")
 
         q-toolbar-title Sala de estudos
         q-space
@@ -27,7 +28,7 @@ export default {
   name: 'HomeLayout',
   data() {
     return {
-      githubUrl: 'http://github.com',
+      githubUrl: 'https://github.com/GuilhermeSnts/sala-de-estudos-cederj',
     };
   },
 };

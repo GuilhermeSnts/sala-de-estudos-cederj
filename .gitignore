@@ -32,3 +32,5 @@ yarn.lock
 *.ntvs*
 *.njsproj
 *.sln
+
+.vercel

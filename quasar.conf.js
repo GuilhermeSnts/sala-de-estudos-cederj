@@ -9,7 +9,7 @@
 /* eslint func-names: 0 */
 /* eslint global-require: 0 */
 
-module.exports = function (/* ctx */) {
+module.exports = function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -47,7 +47,7 @@ module.exports = function (/* ctx */) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
-
+      distDir: ctx.mode.spa ? 'public' : null,
       // transpile: false,
 
       // Add dependencies for transpiling with Babel (Array of string/regex)
@@ -56,9 +56,9 @@ module.exports = function (/* ctx */) {
       // transpileDependencies: [],
 
       // rtl: false, // https://quasar.dev/options/rtl-support
-      // preloadChunks: true,
+      preloadChunks: true,
       // showProgress: false,
-      // gzip: true,
+      gzip: true,
       // analyze: true,
 
       // Options below are automatically set depending on the env, set them if you want to override
@@ -81,9 +81,20 @@ module.exports = function (/* ctx */) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
-      https: false,
+      // https: true,
       port: 8080,
       open: true, // opens browser window automatically
+      proxy: {
+        // proxy all requests starting with /api to jsonplaceholder
+        '/api': {
+          target: 'https://saladeestudos.link/api/',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': '',
+          },
+        },
+      },
+
     },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework

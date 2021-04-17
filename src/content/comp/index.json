@@ -5,87 +5,149 @@
     "items": [
       {
         "id": "ead00031",
-        "link": "/course/comp/ead00031",
         "title": "LIBRAS",
-        "icon": "mdi-hand",
-        "caption": "#ead00031"
+        "icon": "mdi-hand"
       },
       {
         "id": "ead01038",
-        "link": "/course/comp/ead01038",
         "title": "Matemática Básica",
-        "icon": "mdi-calculator-variant",
-        "caption": "#ead01038"
+        "icon": "mdi-calculator-variant"
       },
       {
         "id": "ead05001",
-        "link": "/course/comp/ead05001",
         "title": "Introdução à Informática",
-        "icon": "mdi-desktop-classic",
-        "caption": "#ead05001"
+        "icon": "mdi-desktop-classic"
       },
       {
         "id": "ead05002",
         "link": "/course/comp/ead05002",
         "title": "Construção de Páginas WEB",
-        "icon": "mdi-web",
-        "caption": "#ead05002"
+        "icon": "mdi-web"
       },
       {
         "id": "ead05003",
-        "link": "/course/comp/ead05003",
         "title": "Inglês Instrumental",
-        "icon": "mdi-book-alphabet",
-        "caption": "#ead05003"
+        "icon": "mdi-book-alphabet"
       },
       {
         "id": "ead05004",
-        "link": "/course/comp/ead05004",
         "title": "Fundamentos de Algoritmos para Computação",
-        "icon": "mdi-video-input-component",
-        "caption": "#ead05004"
+        "icon": "mdi-video-input-component"
       },
       {
         "id": "ead05005",
-        "link": "/course/comp/ead05005",
         "title": "Projeto e Desenvolvimento de Algoritmos",
-        "icon": "mdi-gate-xor",
-        "caption": "#ead05005"
+        "icon": "mdi-gate-xor"
       },
       {
         "id": "ead05006",
-        "link": "/course/comp/ead05006",
         "title": "Álgebra Linear",
-        "icon": "mdi-vector-triangle",
-        "caption": "#ead05006"
+        "icon": "mdi-vector-triangle"
       },
       {
         "id": "ead05007",
-        "link": "/course/comp/ead05007",
         "title": "Estrutura de Dados",
-        "icon": "mdi-view-list-outline",
-        "caption": "#ead05007"
+        "icon": "mdi-view-list-outline"
       },
       {
         "id": "ead05008",
-        "link": "/course/comp/ead05008",
         "title": "Matemática para Computação",
-        "icon": "mdi-math-integral-box",
-        "caption": "#ead05008"
+        "icon": "mdi-math-integral-box"
       },
       {
         "id": "ead05010",
-        "link": "/course/comp/ead05010",
         "title": "Organização de Computadores",
-        "icon": "mdi-chip",
-        "caption": "#ead05010"
+        "icon": "mdi-chip"
       },
       {
         "id": "ead05011",
-        "link": "/course/comp/ead05011",
-        "title": "Organização de Computadores",
-        "icon": "mdi-chip",
-        "caption": "#ead05011"
+        "title": "Modelagem de Informação",
+        "icon": "mdi-view-module"
+      },
+      {
+        "id": "ead05012",
+        "title": "Probabilidade e Estatística",
+        "icon": "mdi-percent"
+      },
+      {
+        "id": "ead05014",
+        "title": "Banco de dados",
+        "icon": "mdi-database"
+      },
+      {
+        "id": "ead05015",
+        "title": "Física para Computação",
+        "icon": "mdi-atom-variant"
+      },
+      {
+        "id": "ead05016",
+        "title": "Sistemas Operacionais",
+        "icon": "mdi-laptop"
+      },
+      {
+        "id": "ead05017",
+        "title": "Programação de Aplicações WEB",
+        "icon": "mdi-monitor-dashboard"
+      },
+      {
+        "id": "ead05018",
+        "title": "Análise de Sistemas",
+        "icon": "mdi-note-text-outline"
+      },
+      {
+        "id": "ead05019",
+        "title": "Engenharia de Software",
+        "icon": "mdi-toy-brick"
+      },
+      {
+        "id": "ead05020",
+        "title": "Redes de Computadores I",
+        "icon": "mdi-lan-connect"
+      },
+      {
+        "id": "ead05021",
+        "title": "Programação Orientada a Objetos",
+        "icon": "mdi-cube"
+      },
+      {
+        "id": "ead05022",
+        "title": "Arquitetura e Projeto de Sistemas",
+        "icon": "mdi-view-list"
+      },
+      {
+        "id": "ead05023",
+        "title": "Computação Gráfica",
+        "icon": "mdi-vector-curve"
+      },
+      {
+        "id": "ead05024",
+        "title": "Empreendedorismo e Ética Profissional",
+        "icon": "mdi-tie"
+      },
+      {
+        "id": "ead05025",
+        "title": "Redes de Computadores II",
+        "icon": "mdi-lan"
+      },
+      {
+        "id": "ead05029",
+        "title": "Fundamentos de Programação",
+        "icon": "mdi-code-parentheses-box"
+      },
+      {
+        "id": "ead05030",
+        "title": "Programação com Interfaces Gráficas",
+        "icon": "mdi-monitor-dashboard"
+      },
+      {
+        "id": "ead05034",
+        "title": "Trabalho de Conclusão de Curso",
+        "icon": "mdi-flag-checkered"
+      },
+      {
+        "id": "ead05035",
+        "title": "Desafios de Programação",
+        "icon": "mdi-code-json"
       }
     ]
   }
