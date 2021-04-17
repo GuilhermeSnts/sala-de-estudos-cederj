@@ -11,6 +11,15 @@
           @click="leftDrawerOpen = !leftDrawerOpen"
         )
         q-toolbar-title Sala de estudos
+        q-space
+        q-btn(
+          dense
+          dark
+          flat
+          label="login"
+          aria-label="Login"
+          icon="login"
+        )
 
     q-drawer(
       v-model="leftDrawerOpen"
