@@ -19,6 +19,7 @@
           label="login"
           aria-label="Login"
           icon="login"
+          @click="showModalLogin = !showModalLogin"
         )
 
     q-drawer(
@@ -66,6 +67,7 @@
 
     q-page-container
       router-view
+  modal-login(v-model="showModalLogin")
 </template>
 
 <script>
@@ -125,6 +127,7 @@ export default {
       leftDrawerOpen: false,
       courseLinks: null,
       search: '',
+      showModalLogin: false,
     };
   },
 };
