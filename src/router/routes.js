@@ -29,6 +29,13 @@ const routes = [
     ],
   },
   {
+    path: '/tools',
+    component: () => import('layouts/ToolsLayout.vue'),
+    children: [
+      { path: 'ipeteqs', component: () => import('pages/tools/IPeteqs.vue') },
+    ],
+  },
+  {
     path: '*',
     component: () => import('pages/Error404.vue'),
   },

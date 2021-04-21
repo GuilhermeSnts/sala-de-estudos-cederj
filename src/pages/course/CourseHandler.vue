@@ -50,6 +50,7 @@
       )
         q-tab( name="overview" label="Visão Geral")
         q-tab( name="lessons" label="Vídeo Aulas")
+        q-tab( name="tools" label="Ferramentas")
 
       q-separator
 
@@ -58,11 +59,14 @@
           q-markdown( :src="courseData")
         q-tab-panel( name="lessons")
           course-lesson( :lessons="lessons" :course="course" :loading="fetchingLessons")
+        q-tab-panel( name="tools")
+          course-tools( :tools="courseTools")
 </template>
 
 <script>
 import { apiUrl } from 'boot/axios';
 import CourseHeaderSkeleton from 'components/CourseHeaderSkeleton';
+import CourseTools from 'components/CourseTools';
 import CourseLesson from './CourseLesson';
 
 export default {
@@ -70,6 +74,7 @@ export default {
   components: {
     CourseLesson,
     CourseHeaderSkeleton,
+    CourseTools,
   },
   computed: {
     section() {
@@ -98,7 +103,15 @@ export default {
           this.courseData = data.default;
         });
       this.fetchData();
+      this.setCourseTools();
       this.clear();
+    },
+    async setCourseTools() {
+      // eslint-disable-next-line prefer-template
+      import('../../content/' + this.section + '/courses/' + this.course + '_tools.json')
+        .then((data) => {
+          this.courseTools = data.default;
+        });
     },
     openUrl(url) {
       window.open(url, '_blank');
@@ -156,6 +169,7 @@ export default {
       id: null,
       name: '',
       lessons: [],
+      courseTools: {},
     };
   },
 };

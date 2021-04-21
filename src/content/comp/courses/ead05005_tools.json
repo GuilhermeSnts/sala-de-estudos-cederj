@@ -1,0 +1,9 @@
+{
+  "tools": [
+    {
+      "title": "Interpretador de Peteqs",
+      "route": "/tools/ipeteqs",
+      "icon": "mdi-console"
+    }
+  ]
+}
