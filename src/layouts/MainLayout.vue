@@ -67,15 +67,16 @@
 
     q-page-container
       router-view
-  modal-login(v-model="showModalLogin")
+    modal-login(v-model="showModalLogin")
 </template>
 
 <script>
 import EssentialLink from 'components/EssentialLink.vue';
+import ModalLogin from 'components/ModalLogin';
 
 export default {
   name: 'MainLayout',
-  components: { EssentialLink },
+  components: { EssentialLink, ModalLogin },
   mounted() {
     this.setCourseLinks();
   },

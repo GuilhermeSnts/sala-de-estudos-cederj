@@ -4,9 +4,17 @@
     v-model="dialog"
   )
     q-card
+      q-toolbar
+        q-space
+        q-btn( @click="dialog = false" icon="mdi-close" flat round)
       q-card-section
-        h1 Login
-        q-btn( label="login com google")
+        .text-center
+          q-img( width="60px" src="../assets/saladeestudos-logo.png")
+        h5.text-center.q-mt-sm Acesse sua conta
+        .text-center.q-mb-md
+          | Ao fazer login com seu email google, você terá acesso a ferramentas extras.
+        .text-center.q-mb-lg
+          q-btn( color="blue-8" push icon="mdi-google" label="entrar com google")
 </template>
 
 <script>
