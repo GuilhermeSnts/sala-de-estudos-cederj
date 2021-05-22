@@ -14,10 +14,17 @@
         .text-center.q-mb-md
           | Ao fazer login com seu email google, você terá acesso a ferramentas extras.
         .text-center.q-mb-lg
-          q-btn( color="blue-8" push icon="mdi-google" label="entrar com google")
+          g-signin-button(
+            :params="googleSignInParams"
+            @success="onSignInSuccess"
+            @error="onSignInError"
+          )
+            q-btn(push label="Login com Google" icon="mdi-google" color="blue-8")
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'ModalLogin',
   props: {
@@ -26,13 +33,39 @@ export default {
       type: Boolean,
     },
   },
+  data: () => ({
+    googleSignInParams: {
+      // this code will be replaced after the test has been finished
+      client_id: '200741240586-4n0ud54mk3urkjbksgubr6a4h6s33apn.apps.googleusercontent.com',
+    },
+  }),
+  methods: {
+    ...mapMutations('userModule', ['setUserData']),
+    onSignInSuccess(data) {
+      this.setUserData({
+        fullName: data.Et.Ue,
+        email: data.Et.ou,
+        firstName: data.Et.wV,
+        lastName: data.Et.rT,
+        avatarUrl: data.Et.uK,
+        accessToken: data.qc.access_token,
+        isLoggedIn: true,
+      });
+      sessionStorage.set('google-token', data.qc.access_token);
+      console.log(data);
+    },
+    onSignInError(e) {
+      alert('Ocorreu um erro ao fazer o login');
+      console.log(e);
+    },
+  },
   computed: {
     dialog: {
       get() {
         return this.value;
       },
       set(value) {
-        this.$emit('change', value);
+        this.$emit('input', value);
       },
     },
   },

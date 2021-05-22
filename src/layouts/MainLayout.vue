@@ -19,7 +19,12 @@
           label="login"
           aria-label="Login"
           icon="login"
+          v-if="!isLoggedIn"
           @click="showModalLogin = !showModalLogin"
+        )
+        userOptionsMenu(
+          v-if="isLoggedIn"
+          :userData="getUserData"
         )
 
     q-drawer(
@@ -72,11 +77,13 @@
 
 <script>
 import EssentialLink from 'components/EssentialLink.vue';
+import userOptionsMenu from 'components/userOptionsMenu.vue';
 import ModalLogin from 'components/ModalLogin';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'MainLayout',
-  components: { EssentialLink, ModalLogin },
+  components: { EssentialLink, ModalLogin, userOptionsMenu },
   mounted() {
     this.setCourseLinks();
   },
@@ -86,6 +93,7 @@ export default {
     },
   },
   computed: {
+    ...mapGetters('userModule', ['isLoggedIn', 'getUserData']),
     section() {
       return this.$route.params.section;
     },
