@@ -51,7 +51,7 @@ export default {
         accessToken: data.qc.access_token,
         isLoggedIn: true,
       });
-      sessionStorage.set('google-token', data.qc.access_token);
+      sessionStorage.setItem('google-token', data.qc.access_token);
       console.log(data);
     },
     onSignInError(e) {
